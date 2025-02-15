@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>妹萌え萌えコミュニケーションゲーム</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&family=Hannari&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="game-window">
+            <img src="./images/tsundere.webp" alt="キャラクター" id="character-image">
+            <div class="producer-comment">
+                <p class="producer-name" id="character-name">【ツンデレ妹】</p>
+                <p id="producer-text">・・・なによ。</p>
+            </div>
+            <object id="svg-animation" type="image/svg+xml" data="./effects/favorability-up-animation.svg"
+                class="svg-animation"></object>
+        </div>
+        <div class="options-container" id="options-container">
+            <!-- ボタンがここに追加されます -->
+            <button class="option-button">Option 1</button>
+            <button class="option-button">Option 2</button>
+            <button class="option-button">Option 3</button>
+        </div>
+        <div id="free-text-container" class="free-text-container hidden">
+            <textarea id="free-text-input" placeholder="自由に入力してください..."></textarea>
+            <button id="free-text-button">送信</button>
+        </div>
+        <div id="result-container" class="result-container hidden">
+            <div id="result-icon"></div>
+            <p id="result-text"></p>
+            <p id="feedback-text"></p>
+        </div>
+        <button id="mode-toggle-button">自由記入モードに切り替え</button>
+    </div>
+
+    <!-- モーダル -->
+    <div id="modal">
+        <div id="modalContent">
+            <h2>妹の性格を選んでください</h2>
+            <select id="character-select">
+                <option value="ツンデレ妹">ツンデレ妹</option>
+                <option value="クーデレ妹">クーデレ妹</option>
+                <option value="デレデレ妹">デレデレ妹</option>
+                <option value="ヤンデレ妹">ヤンデレ妹</option>
+                <option value="活発妹">活発妹</option>
+                <option value="ダウナー妹">ダウナー妹</option>
+                <option value="おっとり妹">おっとり妹</option>
+                <option value="ミステリアス妹">ミステリアス妹</option>
+                <option value="社交的妹">社交的妹</option>
+                <option value="クリエイティブ妹">クリエイティブ妹</option>
+                <option value="委員長妹">委員長妹</option>
+                <option value="夢見がち妹">夢見がち妹</option>
+                <option value="その他">その他</option>
+            </select>
+            <div id="custom-character-form" style="display: none;">
+                <input type="text" id="custom-name" placeholder="名前">
+                <textarea id="custom-description" placeholder="性格の説明"></textarea>
+                <input type="file" id="custom-image" accept="image/*">
+            </div>
+            <button id="select-button">決定</button>
+        </div>
+    </div>
+
+    <script src="./js/character.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/produce.js"></script>
+    <script src="./js/sendGpt.js"></script>
+</body>
+
+</html>
