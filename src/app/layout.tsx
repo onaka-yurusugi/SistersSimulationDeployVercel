@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${GeistSans.className} antialiased`}>
         {children}
-        <Analytics />
       </body>
     </html>
   );

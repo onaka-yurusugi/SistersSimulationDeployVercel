@@ -13,7 +13,7 @@ export const useGameState = (initialPersonality?: PersonalityType) => {
     });
 
     const handleSelection = useCallback(
-        async (message: string) => {
+        async (message: string): Promise<EvaluationResult | undefined> => {
             if (state.isLocked) return;
 
             setState((prev) => ({ ...prev, isLocked: true }));
@@ -32,6 +32,7 @@ export const useGameState = (initialPersonality?: PersonalityType) => {
                     isLocked: false,
                 }));
 
+                // playAnimation();  ← この呼び出しを削除またはコメントアウト
                 return result;
             } catch (error) {
                 console.error("Error:", error);

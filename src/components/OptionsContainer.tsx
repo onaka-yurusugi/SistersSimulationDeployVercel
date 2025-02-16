@@ -1,8 +1,9 @@
+import { EvaluationResult } from '@/types/game';
 import { useState, useEffect } from 'react';
 import { getRandomOptions } from '@/lib/options';
 
 interface OptionsContainerProps {
-  onSelect: (message: string) => Promise<void>;
+  onSelect: (message: string) => Promise<EvaluationResult | undefined>;
 }
 
 export default function OptionsContainer({ onSelect }: OptionsContainerProps) {
